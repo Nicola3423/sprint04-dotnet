@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Página Inicial";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo ao Sistema de Odontologia</h1>
+    <p>Gerencie pacientes e médicos de forma eficiente.</p>
+
+    <div class="mb-4">
+        <a asp-controller="Paciente" asp-action="CuidadosDentais" class="btn btn-info">
+            <i class="fas fa-tooth"></i> Cuidados Dentais
+        </a>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4>Pacientes</h4>
+                </div>
+                <div class="card-body">
+                    <p>Cadastre e gerencie os dados dos pacientes do Clinica Odontologica.</p>
+                    <a asp-controller="Paciente" asp-action="Index" class="btn btn-primary">Gerenciar Pacientes</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h4>Médicos</h4>
+                </div>
+                <div class="card-body">
+                    <p>Cadastre e gerencie os dados dos médicos do Odontologico.</p>
+                    <a asp-controller="Medico" asp-action="Index" class="btn btn-success">Gerenciar Médicos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
