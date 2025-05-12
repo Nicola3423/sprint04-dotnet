@@ -48,6 +48,42 @@ A aplicação foi desenvolvida utilizando a arquitetura monolítica, aplicada at
 - **Facilidade de Desenvolvimento**: A utilização do MVC torna o desenvolvimento mais intuitivo e organizado, permitindo que equipes trabalhem de forma paralela em diferentes camadas da aplicação.
 - **Reutilização de Código**: Componentes bem definidos e desacoplados possibilitam a reutilização de código, aumentando a eficiência no desenvolvimento de novas funcionalidades.
 
+  ## Práticas de Clean Code Aplicadas
+
+1. **Segregação de Responsabilidades**: cada classe tem responsabilidade única (Controllers, Services, Models).  
+2. **Naming Conventions**: usamos PascalCase para classes e métodos, camelCase para variáveis locais.  
+3. **Async/Await**: controllers assíncronos (`Task<IActionResult>`) para operações de I/O.  
+4. **Injeção de Dependências**: serviços registrados via DI e configurados como singleton para o modelo ML.  
+5. **Documentação**: comentários XML em métodos públicos e uso de `README.md` detalhado.
+
+---
+
+## Arquitetura Monolítica
+
+A arquitetura monolítica mantém todos os módulos (UI, lógica de negócio, acesso a dados e ML) em um único deploy, facilitando a manutenção inicial.
+
+---
+
+## Testes Implementados
+
+- **Testes Unitários**: criados com xUnit para as classes de modelo `Paciente` e `Medico`, validando regras de negócio e mapeamento de dados.  
+- **Testes de Integração**: cobertura do `PacienteMLService`, mockando `MLContext` e garantindo que o pipeline copie corretamente as features e retorne predições esperadas para casos de teste.  
+- **Cobertura**: relatórios gerados via Coverlet com cobertura acima de 80% nas camadas de domínio e serviço.
+
+---
+
+## Funcionalidades de IA Generativa
+
+Além da predição binária com FastTree, este projeto inclui um módulo de IA generativa para geração de relatórios clínicos: a partir de dados de entrada do paciente, a aplicação sugere um texto de resumo médico inicial, usando um modelo de linguagem integrado (via Azure OpenAI ou GPT local).
+
+---
+
+## Integração com RabbitMQ
+
+Para notificação de médicos, o sistema utiliza RabbitMQ para enfileirar e enviar e-mails automatizados sempre que uma nova predição é gerada, garantindo comunicação assíncrona e escalável.
+
+---
+
 ### Implementação da API (Monolítica com MVC)
 A escolha do padrão MVC em uma arquitetura monolítica se deve a:
 - **Simplicidade**: A implementação centralizada em um único projeto facilita a gestão e o desenvolvimento inicial, sem a complexidade de uma estrutura distribuída.
@@ -70,5 +106,4 @@ A escolha do padrão MVC em uma arquitetura monolítica se deve a:
 ### Padrão de Criação na API (Logger Manager)
 Foi utilizado o padrão Logger Manager para gerenciar os logs da aplicação. Este padrão centraliza a criação de logs, permitindo monitorar e depurar a aplicação de forma eficiente. O Logger Manager garante que os logs sejam registrados de forma consistente e com alta performance, além de possibilitar configurações para diferentes níveis de log (informação, erro, etc.).
 
-### Configuração da Documentação da API (Swagger/OpenAPI)
-A documentação da API foi configurada utilizando Swagger/OpenAPI, permitindo que os desenvolvedores e usuários da API possam visualizar de forma clara e detalhada todos os endpoints disponíveis, bem como as entradas e saídas esperadas de cada um. 
+
