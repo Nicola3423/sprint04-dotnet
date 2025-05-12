@@ -1,9 +1,9 @@
 # Aplicativo de Gestão de Pacientes e Médicos Odontologico
 
 ## Integrantes:
-Igor Akira Bortolini Tateishi RM:554227 
-Nicola Monte Cravo Garofalo RM:553991 
-Willyam Santos Souza RM:554244 
+- Igor Akira Bortolini Tateishi RM:554227 
+- Nicola Monte Cravo Garofalo RM:553991 
+- Willyam Santos Souza RM:554244 
 
 ## Objetivo do Projeto
 O objetivo deste projeto é desenvolver um aplicativo em C# que implemente um sistema de gerenciamento de pacientes e médicos através de operações CRUD (Criar, Ler, Atualizar e Deletar). Este sistema facilitará o cadastro e a administração das informações dos pacientes e médicos, contribuindo para uma melhor gestão de dados na área da odotonlogica.
